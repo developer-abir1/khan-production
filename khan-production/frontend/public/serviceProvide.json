@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Costomer Quality service Manient",
+    "description": "We are providing the Costomer Quality service Manient",
+    "slug": "Costomer-Quality-service-Manient",
+    "category": "shoes",
+    "img": "image/lady1.jpg",
+    "stock": 10,
+    "rating": 4.5,
+    "numReviews": 10
+  },
+  {
+    "name": "Replenishment of the product",
+    "description": "  We are providing the Replenishment of the product",
+    "slug": " Replenishment-of-the-product",
+    "category": "shoes",
+    "img": "image/lady1.jpg",
+    "stock": 10,
+    "rating": 4.5,
+    "numReviews": 10
+  },
+  {
+    "name": "Credit Card Payment",
+    "description": "   We are providing the Credit Card Payment",
+    "slug": "Credit-Card-Payment",
+    "category": "shoes",
+    "img": "image/lady1.jpg",
+    "stock": 10,
+    "rating": 4.5,
+    "numReviews": 10
+  },
+  {
+    "name": " helping the customer to choose the product",
+    "description": "   We are providing the helping the customer to choose the product",
+    "slug": " helping-the-customer-to-choose-the-product",
+    "category": "shoes",
+    "img": "image/lady1.jpg",
+    "stock": 10,
+    "rating": 4.5,
+    "numReviews": 10
+  }
+]
