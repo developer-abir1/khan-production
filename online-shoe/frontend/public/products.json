@@ -1,0 +1,49 @@
+[
+  {
+    "name": "bast Traker",
+    "price": 100,
+    "description": "A smart watch",
+    "slug": "best-traker",
+    "category": "shoes",
+    "gender": "male",
+    "img": "image/shoe.jpg",
+    "stock": 10,
+    "rating": 4.5,
+    "numReviews": 10
+  },
+  {
+    "name": "Nikey Shoe",
+    "price": 125,
+    "description": "A smart watch",
+    "slug": "nk-shoe",
+    "category": "shoes",
+    "img": "image/shoe2.jpg",
+    "stock": 10,
+    "rating": 4.5,
+    "numReviews": 10
+  },
+  {
+    "name": "Lady Shoe1",
+    "price": 78,
+    "description": "A smart watch",
+    "slug": " lad-shoe1",
+    "category": "shoes",
+    "gender": "female",
+    "img": "image/lady2.jpg",
+    "stock": 10,
+    "rating": 4.5,
+    "numReviews": 10
+  },
+  {
+    "name": "Lady Shoe2",
+    "price": 99,
+    "description": "A smart watch",
+    "slug": "lad-shoe2",
+    "category": "shoes",
+    "gender": "female",
+    "img": "image/lady1.jpg",
+    "stock": 10,
+    "rating": 4.5,
+    "numReviews": 10
+  }
+]

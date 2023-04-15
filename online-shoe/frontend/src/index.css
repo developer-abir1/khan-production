@@ -1,0 +1,61 @@
+:root {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+.caruselColor1 {
+  background-image: linear-gradient(60deg, #2a0307, #400368, #2a0307);
+}
+.caruselColor2 {
+  background-image: linear-gradient(60deg, #400368, #2a0307, #400368);
+}
+.btn-brand {
+  background-image: linear-gradient(135deg, #400368 10%, #2a0307 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.btn-brand:hover {
+  background-image: linear-gradient(135deg, #2a0307 10%, #400368 100%);
+  scale: 1.1;
+}
+.productImage:hover {
+  transform: scale(1.5);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.sub-brand-btn {
+  background-image: linear-gradient(135deg, #400368 10%, #2a0307 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.sub-brand-btn:hover {
+  background-image: linear-gradient(135deg, #2a0307 10%, #400368 100%);
+  scale: 1.1;
+}
+.text-brand {
+  background-image: linear-gradient(135deg, #2a0307 10%, #400368 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.server-card:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.iconsComment {
+  transform: rotate(80deg);
+}
