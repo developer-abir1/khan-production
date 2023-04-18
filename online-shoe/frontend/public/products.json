@@ -26,7 +26,7 @@
     "name": "Lady Shoe1",
     "price": 78,
     "description": "A smart watch",
-    "slug": " lad-shoe1",
+    "slug": "lad-shoe1",
     "category": "shoes",
     "gender": "female",
     "img": "image/lady2.jpg",

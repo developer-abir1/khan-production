@@ -1,9 +1,9 @@
 import React from 'react'
 import { Card, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+const Product = ({ product, handleAddCart }) => {
+  const { name, price, img, description, slug } = product
 
-const Product = ({ product }) => {
-  const { name, price, img, description } = product
-  console.log(product)
   return (
     <Col lg={4} md={6} sm={6} xs={12} className="px-4  py-4 ">
       <Card>
@@ -18,10 +18,14 @@ const Product = ({ product }) => {
           <Card.Title>{name}</Card.Title>
 
           <div className=" d-flex justify-content-between">
-            <button className="btn-brand  ">
+            <button
+              className="btn-brand  "
+              onClick={() => handleAddCart(product)}
+            >
               <i className="fas fa-shopping-cart"></i>
               Add Card
             </button>
+
             <p>${price}</p>
           </div>
         </Card.Body>

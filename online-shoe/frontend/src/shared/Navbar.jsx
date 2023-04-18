@@ -1,47 +1,63 @@
+import { useContext, useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
-import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import { BsCart4 } from 'react-icons/bs'
+import { Dropdown } from 'react-bootstrap'
+import { AuthContext } from '../context/AuthProvider'
+import { Link } from 'react-router-dom'
 
 function Navigation() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setIsScrolled(window.scrollY > 100)
+    })
+  }, [])
+  const { cart } = useContext(AuthContext)
+
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar
+      expand="lg"
+      className={`sticky-top  ${isScrolled ? 'navBg1' : 'navBg2'}`}
+    >
       <Container>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Link to={'/'}>
+          <Navbar.Brand to="/" className="fw-bold">
+            Shoe Market
+          </Navbar.Brand>
+        </Link>
+        <Navbar.Toggle
+          aria-controls="navbarScroll"
+          className=" bg-white border-0"
+        />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="ms-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
+            <Link to={'/'}>
+              <Nav.Link className="text-white">Home</Nav.Link>
+            </Link>
+            <Nav.Link href="#action1" className="text-white">
+              Products
+            </Nav.Link>
+            {cart.length > 0 && (
+              <Link to={'/cart'}>
+                <Nav.Link href="#action1" className="text-white">
+                  <BsCart4 size={20} />{' '}
+                  <span className=" bg-danger rounded py-2 px-2">
+                    {cart?.length}
+                  </span>
+                </Nav.Link>
+              </Link>
+            )}
+            <Nav.Link href="#action1" className="text-white">
+              Login
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>

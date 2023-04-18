@@ -3,7 +3,7 @@
     "name": "Replels Granty",
     "price": 78,
     "description": "A smart watch",
-    "slug": " lad-shoe1",
+    "slug": "smart-watch3",
     "category": "shoes",
     "gender": "female",
     "img": "image/w1.jpg",
@@ -12,10 +12,10 @@
     "numReviews": 10
   },
   {
-    "name": "Card Payment Fecelity",
+    "name": "Butyful sungless",
 
     "description": "A smart watch",
-    "slug": "lad-shoe2",
+    "slug": "sungless1",
     "category": "shoes",
     "gender": "female",
     "img": "image/sungless1.jpg",
@@ -27,7 +27,7 @@
     "name": "Money back Guarantee",
 
     "description": "A smart watch",
-    "slug": "lad-shoe2",
+    "slug": "smart-watch",
     "category": "shoes",
     "gender": "female",
     "img": "image/w3.jpg",
@@ -39,7 +39,7 @@
     "name": "Lottery system",
 
     "description": "A smart watch",
-    "slug": "lad-shoe2",
+    "slug": "smart-watch2",
     "category": "shoes",
     "gender": "female",
     "img": "image/w2.jpg",
