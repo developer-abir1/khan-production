@@ -6,6 +6,7 @@ export const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
   const [cart, setCart] = useState([])
+
   const { data: products = [] } = getProductsQuery()
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const AuthProvider = ({ children }) => {
       }
       setCart(storedCart)
     }
-  }, [products && products.length])
+  }, [products])
 
   const data = {
     setCart,

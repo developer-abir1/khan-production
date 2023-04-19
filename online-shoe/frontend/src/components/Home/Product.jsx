@@ -7,13 +7,15 @@ const Product = ({ product, handleAddCart }) => {
   return (
     <Col lg={4} md={6} sm={6} xs={12} className="px-4  py-4 ">
       <Card>
-        <Card.Img
-          className="   object-fit-cover   rounded  shadow-sm  bg-body-tertiary  "
-          variant="top"
-          src={img}
-          width={300}
-          height={250}
-        />
+        <Link to={`/product/${slug}`}>
+          <Card.Img
+            className="   object-fit-cover   rounded  shadow-sm  bg-body-tertiary  "
+            variant="top"
+            src={img}
+            width={300}
+            height={250}
+          />
+        </Link>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
 

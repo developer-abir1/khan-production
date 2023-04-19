@@ -41,9 +41,11 @@ function Navigation() {
             <Link to={'/'}>
               <Nav.Link className="text-white">Home</Nav.Link>
             </Link>
-            <Nav.Link href="#action1" className="text-white">
-              Products
-            </Nav.Link>
+            <Link to={'/products'}>
+              <Nav.Link href="#action1" className="text-white">
+                Products
+              </Nav.Link>
+            </Link>
             {cart.length > 0 && (
               <Link to={'/cart'}>
                 <Nav.Link href="#action1" className="text-white">
@@ -54,6 +56,12 @@ function Navigation() {
                 </Nav.Link>
               </Link>
             )}
+            <Link to={'/dashboard'}>
+              {' '}
+              <Nav.Link href="#action1" className="text-white">
+                Dashboard
+              </Nav.Link>
+            </Link>
             <Nav.Link href="#action1" className="text-white">
               Login
             </Nav.Link>

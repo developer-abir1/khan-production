@@ -1,11 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Product from './Product'
 import { Row } from 'react-bootstrap'
 import { getProductsQuery } from '../../hooks/productHooks'
-import { addToDb } from '../../utils/localStore'
+import { addToDb, getDb } from '../../utils/localStore'
 import { AuthContext } from '../../context/AuthProvider'
+import { Link, useLocation } from 'react-router-dom'
 
 const Products = () => {
+  const location = useLocation()
   const { cart, setCart } = useContext(AuthContext)
   const { data: products, isLoading, error } = getProductsQuery()
 
@@ -31,7 +33,7 @@ const Products = () => {
     <div>Error</div>
   ) : (
     <div>
-      <h1>Total Products </h1>
+      <h4 className="mt-4"> Best Collactions</h4>
       <Row>
         {products.map((product) => (
           <Product
@@ -41,9 +43,15 @@ const Products = () => {
           />
         ))}
       </Row>
-      <div className=" d-flex justify-content-center">
-        <button className="sub-brand-btn">Viwe All</button>
-      </div>
+      {location.pathname === '/products' ? (
+        ''
+      ) : (
+        <Link to={'/products'}>
+          <div className=" d-flex justify-content-center">
+            <button className="sub-brand-btn">Viwe All</button>
+          </div>
+        </Link>
+      )}
     </div>
   )
 }

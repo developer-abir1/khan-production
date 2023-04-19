@@ -10,8 +10,6 @@ import FormCheckInput from 'react-bootstrap/esm/FormCheckInput'
 const Cart = () => {
   const { cart, setCart } = useContext(AuthContext)
 
-  const [shipping, setShipping] = useState(false)
-
   const comperData = (a, b) => {
     if (a.slug < b.slug) {
       return -1
@@ -60,11 +58,13 @@ const Cart = () => {
     removeFromDb(product.slug)
   }
 
-  const totalText =
-    cart.reduce(
-      (total, product) => total + product.price * product.quantity,
-      0
-    ) * 0.1
+  const total = cart.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  )
+  const shippingCharge = 10
+  const tax = (total + shippingCharge) * 0.1
+  const grandTotal = total + shippingCharge + tax
 
   return cart.length === 0 ? (
     <div
@@ -86,7 +86,7 @@ const Cart = () => {
                 <th>#</th>
                 <th>Image</th>
                 <th>Product Name</th>
-                <th>Price</th>
+                <th>Sub total</th>
                 <th>Quantity</th>
                 <th>Action</th>
               </tr>
@@ -100,13 +100,13 @@ const Cart = () => {
                     <img src={product.img} width={50} alt="" />
                   </td>
                   <td>
-                    <Link to={`/product/${product.slug}`}>
+                    <Link to={`/productDetails/${product.slug}`}>
                       {' '}
                       <h5>{product.name}</h5>
                     </Link>
                   </td>
                   <td>
-                    <p>{product.price * product.quantity}</p>
+                    <p>${product.price * product.quantity}</p>
                   </td>
                   <td className="">
                     <button
@@ -139,7 +139,7 @@ const Cart = () => {
         </Col>
         <Col lg={4}>
           <div className=" border  rounded  p-3 ">
-            <h3 className=" text-center  ">Order Summary</h3>
+            <h3 className=" text-center   text-brand fw-bold">Order Summary</h3>
             <div
               className=" ml-8"
               style={{
@@ -152,30 +152,16 @@ const Cart = () => {
                 {cart.reduce((total, product) => total + product.quantity, 0)}
               </p>
               <p>
-                <span className=" fw-bold"> 10% tex : </span>
-                {totalText.toFixed(2)}
+                <span className="  "> 10% tex : </span>
+                {tax.toFixed()}
               </p>
+              <p>
+                <span> shipping cost $20</span>
+              </p>
+              <p className="  ">Total Price: {total}</p>
               <p className=" fw-bold fs-4">
-                Total Price:{' '}
-                {shipping
-                  ? cart.reduce(
-                      (total, product) =>
-                        total + product.price * product.quantity,
-                      0
-                    ) + 20
-                  : cart.reduce(
-                      (total, product) =>
-                        total + product.price * product.quantity,
-                      0
-                    )}
+                Total Price: {grandTotal.toFixed()}
               </p>
-              <h6>
-                <input
-                  type="checkbox"
-                  onChange={(e) => setShipping(e.target.checked)}
-                />
-                <span> shipping raper $20</span>
-              </h6>
             </div>
 
             <div className=" d-flex justify-content-center align-items-center">
